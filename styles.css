@@ -17,15 +17,16 @@ body {
 
 /* Header styling */
 header {
+  position: fixed; /* Fix the header at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it appears above other elements */
+  margin: 0; /* Remove any unwanted margins */
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
-  padding: 15px;
-  margin: 0; /* Remove default margins */
-  width: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   animation: fadeIn 0.8s ease-in-out; /* Entry animation */
 }
 
