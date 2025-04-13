@@ -1,17 +1,17 @@
 // Function to update the last press time display
 function updateLastPressTime() {
-  const lastTime = localStorage.getItem("lastPressTime");
+  const lastTime = localStorage.getItem("lastPressTime"); // Retrieve the stored time from localStorage
   if (lastTime) {
     document.getElementById("lastPressTime").textContent = `Last pressed: ${lastTime}`;
   } else {
-    document.getElementById("lastPressTime").textContent = "Last pressed: Never";
+    document.getElementById("lastPressTime").textContent = "Last pressed: Never"; // Default display
   }
 }
 
-// Event listener for the original button press
+// Event listener for the original "Press Me" button
 document.getElementById("pressButton").addEventListener("click", () => {
-  const currentTime = new Date().toLocaleString();
-  localStorage.setItem("lastPressTime", currentTime);
+  const currentTime = new Date().toLocaleString(); // Get the current time
+  localStorage.setItem("lastPressTime", currentTime); // Save the time to localStorage
   document.getElementById("lastPressTime").textContent = `Last pressed: ${currentTime}`;
 });
 
@@ -26,3 +26,6 @@ document.getElementById("goOnButton").addEventListener("click", () => {
     video.play();
   }
 });
+
+// Run the update function on page load
+updateLastPressTime();
