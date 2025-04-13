@@ -1,3 +1,11 @@
+// Array of video file paths for the library
+const videoLibrary = [
+  "videos/video1.mp4",
+  "videos/video2.mp4",
+  "videos/video3.mp4",
+  "videos/video4.mp4" // Add as many videos as you want!
+];
+
 // Function to update the last press time display
 function updateLastPressTime() {
   const lastTime = localStorage.getItem("lastPressTime"); // Retrieve the stored time from localStorage
@@ -17,28 +25,31 @@ document.getElementById("pressButton").addEventListener("click", () => {
 
 // Event listener for the "Want to go on?" button
 document.getElementById("goOnButton").addEventListener("click", () => {
-  // Show the custom modal popup
-  const modal = document.getElementById("popupModal");
-  modal.style.display = "flex"; // Activate modal visibility
+  // Select a random video from the array
+  const randomVideo = videoLibrary[Math.floor(Math.random() * videoLibrary.length)];
 
-  // Automatically play the video when the modal appears
-  const video = document.getElementById("popupVideo"); // Target video inside the modal
-  if (video) {
-    video.play();
-  }
+  // Set the video source dynamically
+  const videoElement = document.getElementById("popupVideo");
+  const sourceElement = document.getElementById("videoSource");
+  
+  sourceElement.src = randomVideo; // Set the new video source
+  videoElement.load(); // Reload video element with the new source
+  videoElement.play(); // Automatically play the selected video
+
+  // Show the modal popup
+  const modal = document.getElementById("popupModal");
+  modal.style.display = "flex"; // Make the modal visible
 });
 
-// Event listener for the "Close" button in the custom modal
+// Event listener for the "Close" button in the modal
 document.getElementById("closeModalButton").addEventListener("click", () => {
   const modal = document.getElementById("popupModal");
   modal.style.display = "none"; // Hide the modal
 
   // Stop and reset the video when closing the modal
-  const video = document.getElementById("popupVideo");
-  if (video) {
-    video.pause();
-    video.currentTime = 0; // Reset video to the beginning
-  }
+  const videoElement = document.getElementById("popupVideo");
+  videoElement.pause();
+  videoElement.currentTime = 0; // Reset video to the beginning
 });
 
 // Run the update function on page load
