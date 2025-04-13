@@ -1,9 +1,6 @@
 // Function to update the last press time display
 function updateLastPressTime() {
-  // Retrieve the stored time from localStorage
   const lastTime = localStorage.getItem("lastPressTime");
-  
-  // Check if a time is stored, and update the display accordingly
   if (lastTime) {
     document.getElementById("lastPressTime").textContent = `Last pressed: ${lastTime}`;
   } else {
@@ -11,12 +8,21 @@ function updateLastPressTime() {
   }
 }
 
-// Event listener for button press
+// Event listener for the original button press
 document.getElementById("pressButton").addEventListener("click", () => {
-  const currentTime = new Date().toLocaleString(); // Get the current time
-  localStorage.setItem("lastPressTime", currentTime); // Save the time to localStorage
+  const currentTime = new Date().toLocaleString();
+  localStorage.setItem("lastPressTime", currentTime);
   document.getElementById("lastPressTime").textContent = `Last pressed: ${currentTime}`;
 });
 
-// Run the update function on page load
-updateLastPressTime();
+// Event listener for the "Want to go on?" button
+document.getElementById("goOnButton").addEventListener("click", () => {
+  // Show a popup message
+  alert("You will be okay");
+
+  // Play the video by triggering the play method of the video element
+  const video = document.querySelector("video");
+  if (video) {
+    video.play();
+  }
+});
