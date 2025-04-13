@@ -69,5 +69,5 @@ function closeModal() {
 }
 
 // Attach event listeners to the buttons
-document.getElementById("pressButton").addEventListener("click", openVideoModal);
-document.getElementById("goOnButton").addEventListener("click", openVerseModal);
+document.getElementById("pressButton").addEventListener("click", openVideoModal); // "Did you goon?" -> Video
+document.getElementById("goOnButton").addEventListener("click", openVerseModal); // "Are you feeling urges to goon?" -> Bible verses
