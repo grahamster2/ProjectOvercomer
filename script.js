@@ -41,6 +41,26 @@ document.getElementById("goOnButton").addEventListener("click", () => {
   });
 });
 
+// Event listener for the "Want to go on?" button
+document.getElementById("goOnButton").addEventListener("click", () => {
+  // Show the modal popup
+  const modal = document.getElementById("popupModal");
+  modal.style.display = "flex"; // Use "flex" to activate CSS centering
+
+  // Automatically play the video when the modal appears
+  const video = document.querySelector("video");
+  if (video) {
+    video.play();
+  }
+});
+
+// Event listener for the "Close" button in the modal
+document.getElementById("closeModalButton").addEventListener("click", () => {
+  const modal = document.getElementById("popupModal");
+  modal.style.display = "none"; // Hide the modal
+});
+
+
 
 // Run the update function on page load
 updateLastPressTime();
