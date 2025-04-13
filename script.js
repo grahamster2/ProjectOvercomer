@@ -15,11 +15,6 @@ document.getElementById("pressButton").addEventListener("click", () => {
   document.getElementById("lastPressTime").textContent = `Last pressed: ${currentTime}`;
 });
 
-// Event listener for the "Want to go on?" button
-document.getElementById("goOnButton").addEventListener("click", () => {
-  // Show a popup message
-  alert("You will be okay");
-
   // Play the video by triggering the play method of the video element
   const video = document.querySelector("video");
   if (video) {
@@ -43,7 +38,7 @@ document.getElementById("goOnButton").addEventListener("click", () => {
 
 // Event listener for the "Want to go on?" button
 document.getElementById("goOnButton").addEventListener("click", () => {
-  // Show the modal popup
+  // Show the custom modal popup (remove browser alert completely)
   const modal = document.getElementById("popupModal");
   modal.style.display = "flex"; // Use "flex" to activate CSS centering
 
@@ -54,11 +49,12 @@ document.getElementById("goOnButton").addEventListener("click", () => {
   }
 });
 
-// Event listener for the "Close" button in the modal
+// Event listener for the "Close" button in the custom modal
 document.getElementById("closeModalButton").addEventListener("click", () => {
   const modal = document.getElementById("popupModal");
-  modal.style.display = "none"; // Hide the modal
+  modal.style.display = "none"; // Hide the custom modal
 });
+
 
 
 
