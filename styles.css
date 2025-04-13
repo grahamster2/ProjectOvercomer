@@ -2,8 +2,8 @@
 body {
   font-family: 'Helvetica', sans-serif;
   font-weight: bold;
-  margin: 0; /* Remove default browser margins */
-  padding: 0; /* Remove default browser paddings */
+  margin: 0;
+  padding: 0;
   background-color: #E0E0CE; /* Light Beige */
   color: #000000; /* Black */
   text-align: center;
@@ -62,6 +62,7 @@ footer {
 /* Main content styling */
 main {
   padding: 20px;
+  padding-top: 70px; /* Prevent overlap with the fixed header */
   animation: slideUp 0.8s ease-in-out; /* Main content animation */
 }
 
