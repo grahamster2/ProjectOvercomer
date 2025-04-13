@@ -182,3 +182,16 @@ p, h2 {
     opacity: 1;
   }
 }
+
+/* Apply Helvetica Bold to the entire page */
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+/* Ensure headers and text also use the updated font */
+h1, h2, p, button {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
