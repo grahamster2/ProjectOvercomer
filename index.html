@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overcomer</title>
+  <title>Direct Video Upload</title>
 </head>
 <body>
-  <h1>Did you relapse?</h1>
-  <button id="pressButton">YES</button>
+  <h1>Press the Button!</h1>
+  <button id="pressButton">Press Me</button>
   <p id="lastPressTime">Last pressed: Never</p>
   <div id="videoContainer">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/GK11SBlt4YY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <video width="560" height="315" controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
   <script src="script.js"></script>
 </body>
