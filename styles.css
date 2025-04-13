@@ -21,19 +21,24 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px; /* Reduce height for a smaller banner */
   z-index: 1000; /* Ensure it appears above other elements */
   margin: 0; /* Remove any unwanted margins */
-  padding: 15px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  padding: 0; /* Remove extra padding */
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
   animation: fadeIn 0.8s ease-in-out; /* Entry animation */
 }
 
 header img {
   display: block;
-  margin-bottom: 10px;
-  max-width: 120px; /* Adjust logo size */
+  margin: 0; /* Center the logo */
+  max-width: 70px; /* Adjust logo size for the smaller banner */
   transition: transform 0.3s ease; /* Hover effect */
 }
 
@@ -42,9 +47,9 @@ header img:hover {
 }
 
 header h1 {
-  font-size: 2.2rem;
-  letter-spacing: 1.5px; /* Modern text spacing */
-  margin: 5px 0;
+  font-size: 1.5rem; /* Adjust header text size for smaller banner */
+  letter-spacing: 1px; /* Modern text spacing */
+  margin: 5px 0 0 0; /* Tighten spacing between logo and text */
 }
 
 /* Footer styling */
@@ -62,7 +67,7 @@ footer {
 /* Main content styling */
 main {
   padding: 20px;
-  padding-top: 70px; /* Prevent overlap with the fixed header */
+  padding-top: 100px; /* Prevent overlap with the fixed header */
   animation: slideUp 0.8s ease-in-out; /* Main content animation */
 }
 
@@ -190,6 +195,14 @@ video {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  header {
+    height: 60px; /* Make the banner smaller on mobile */
+  }
+
+  header img {
+    max-width: 50px; /* Adjust logo size for mobile */
+  }
+
   h1, h2 {
     font-size: 1.5rem; /* Adjust font sizes for smaller screens */
   }
