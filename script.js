@@ -27,5 +27,20 @@ document.getElementById("goOnButton").addEventListener("click", () => {
   }
 });
 
+// Show custom popup and play the video
+document.getElementById("goOnButton").addEventListener("click", () => {
+  const modal = document.getElementById("popupModal");
+  modal.style.display = "block";
+
+  document.getElementById("closeModal").addEventListener("click", () => {
+    modal.style.display = "none";
+    const video = document.querySelector("video");
+    if (video) {
+      video.play();
+    }
+  });
+});
+
+
 // Run the update function on page load
 updateLastPressTime();
