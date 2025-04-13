@@ -21,7 +21,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* Reduce height for a smaller banner */
+  height: 90px; /* Reduce height for a smaller banner */
   z-index: 1000; /* Ensure it appears above other elements */
   margin: 0; /* Remove any unwanted margins */
   padding: 0; /* Remove extra padding */
