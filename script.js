@@ -1,9 +1,10 @@
 // Array of video file paths for the library
 const videoLibrary = [
-  "videos/video.mp4",
-  "videos/video2.mp4"
+  "videos/video1.mp4",
+  "videos/video2.mp4",
+  "videos/video3.mp4",
+  "videos/video4.mp4" // Add more videos as needed
 ];
-
 
 // Function to update the last press time display
 function updateLastPressTime() {
