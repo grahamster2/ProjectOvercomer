@@ -12,28 +12,6 @@ const bibleVerses = [
 
 let currentVerseIndex = 0; // Track the current verse for the Bible verses feature
 
-// Function to open the modal and play a video
-function openVideoModal() {
-  const modal = document.getElementById("popupModal");
-  const modalContent = document.getElementById("modalContent");
-
-  // Inject video content into the modal
-  modalContent.innerHTML = `
-    <p>You will be okay! I know you can stay strong. Just pray and ask God to help you. Take a few deep breaths and pray it out twin. Much love.</p>
-    <video id="popupVideo" width="560" height="315" controls>
-      <source id="videoSource" src="videos/sample-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <button id="closeModalButton">Close</button>
-  `;
-
-  // Show the modal
-  modal.style.display = "flex";
-
-  // Add event listener to the "Close" button to hide the modal
-  document.getElementById("closeModalButton").addEventListener("click", closeModal);
-}
-
 // Function to display the current Bible verse in the modal
 function displayCurrentVerse() {
   const modalContent = document.getElementById("modalContent");
@@ -62,6 +40,28 @@ function openVerseModal() {
   displayCurrentVerse(); // Show the first verse
 }
 
+// Function to open the modal and play a video
+function openVideoModal() {
+  const modal = document.getElementById("popupModal");
+  const modalContent = document.getElementById("modalContent");
+
+  // Inject video content into the modal
+  modalContent.innerHTML = `
+    <p>You will be okay! I know you can stay strong. Just pray and ask God to help you. Take a few deep breaths and pray it out twin. Much love.</p>
+    <video id="popupVideo" width="560" height="315" controls>
+      <source id="videoSource" src="videos/sample-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="closeModalButton">Close</button>
+  `;
+
+  // Show the modal
+  modal.style.display = "flex";
+
+  // Add event listener to the "Close" button to hide the modal
+  document.getElementById("closeModalButton").addEventListener("click", closeModal);
+}
+
 // Function to close the modal
 function closeModal() {
   const modal = document.getElementById("popupModal");
@@ -69,5 +69,5 @@ function closeModal() {
 }
 
 // Attach event listeners to the buttons
-document.getElementById("pressButton").addEventListener("click", openVideoModal); // "Did you goon?" -> Video
-document.getElementById("goOnButton").addEventListener("click", openVerseModal); // "Are you feeling urges to goon?" -> Bible verses
+document.getElementById("pressButton").addEventListener("click", openVerseModal); // "Did you goon?" -> Bible verses
+document.getElementById("goOnButton").addEventListener("click", openVideoModal); // "Are you feeling urges to goon?" -> Video
