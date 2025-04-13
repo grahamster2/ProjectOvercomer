@@ -17,12 +17,12 @@ document.getElementById("pressButton").addEventListener("click", () => {
 
 // Event listener for the "Want to go on?" button
 document.getElementById("goOnButton").addEventListener("click", () => {
-  // Show the custom modal popup (removing browser alert completely)
+  // Show the custom modal popup
   const modal = document.getElementById("popupModal");
-  modal.style.display = "flex"; // Display the modal with CSS centering
+  modal.style.display = "flex"; // Activate modal visibility
 
   // Automatically play the video when the modal appears
-  const video = document.querySelector("video");
+  const video = document.getElementById("popupVideo"); // Target video inside the modal
   if (video) {
     video.play();
   }
@@ -32,6 +32,13 @@ document.getElementById("goOnButton").addEventListener("click", () => {
 document.getElementById("closeModalButton").addEventListener("click", () => {
   const modal = document.getElementById("popupModal");
   modal.style.display = "none"; // Hide the modal
+
+  // Stop and reset the video when closing the modal
+  const video = document.getElementById("popupVideo");
+  if (video) {
+    video.pause();
+    video.currentTime = 0; // Reset video to the beginning
+  }
 });
 
 // Run the update function on page load
