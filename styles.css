@@ -7,33 +7,65 @@ body {
   background-color: #E0E0CE; /* Light Beige */
   color: #000000; /* Black */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full-height layout */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header styling */
 header {
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
-  padding: 20px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in-out; /* Entry animation */
 }
 
 header img {
   display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  max-width: 150px; /* Adjust logo size */
+  margin-bottom: 5px;
+  max-width: 120px; /* Reduced size for sleeker look */
+  transition: transform 0.3s ease; /* Hover effect */
 }
 
+header img:hover {
+  transform: scale(1.1); /* Logo hover scaling */
+}
+
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1.5px; /* Modern text spacing */
+  margin: 5px 0;
+}
+
+/* Footer styling */
 footer {
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
-  padding: 10px 0;
-  margin-top: 40px;
+  padding: 10px;
+  width: 100%;
+  position: fixed; /* Fix to bottom */
+  bottom: 0;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-/* Heading styles */
+/* Main content styling */
+main {
+  padding: 20px;
+  animation: slideUp 0.8s ease-in-out; /* Main content animation */
+}
+
 h1, h2 {
-  margin: 20px;
   color: #F2AF29; /* Mustard Yellow */
+  margin: 15px;
 }
 
 h1 {
@@ -42,47 +74,41 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+p {
+  color: #474747; /* Dark Gray */
+  font-size: 1rem;
 }
 
 /* Button styling */
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #F2AF29; /* Mustard Yellow */
   color: #000000; /* Black */
   border: none;
-  border-radius: 5px;
+  border-radius: 50px; /* Rounded buttons */
   cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Depth effect */
+  transition: all 0.3s ease;
 }
 
 button:hover {
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
-  transform: scale(1.1);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4); /* Enhanced hover shadow */
+  transform: scale(1.05); /* Hover scaling */
 }
 
-/* Video container and video styling */
-#videoContainer {
-  margin: 20px auto;
-  transition: transform 0.3s ease;
-}
-
-#videoContainer:hover {
-  transform: scale(1.05);
-}
-
+/* Video container styling */
 video {
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
   border: 3px solid #474747; /* Dark Gray */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Text styling */
-p {
-  margin-bottom: 20px;
-  color: #474747; /* Dark Gray */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Polished look */
 }
 
 /* Popup modal styling */
@@ -97,16 +123,16 @@ p {
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
 }
 
-/* Modal content styling */
 .modal-content {
   background-color: #E0E0CE; /* Light Beige */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-  animation: slideDown 0.3s ease-in-out;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  animation: slideDown 0.5s ease-in-out; /* Entry animation */
 }
 
 #closeModalButton {
@@ -114,16 +140,40 @@ p {
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 #closeModalButton:hover {
   background-color: #F2AF29; /* Mustard Yellow */
   color: #474747; /* Dark Gray */
+  transform: scale(1.1); /* Hover scaling */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Hover shadow */
 }
 
-/* Animation for modal entrance */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slideDown {
   from {
     transform: translateY(-50px);
