@@ -7,27 +7,34 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Press the Button!</h1>
-  <button id="pressButton">Press Me</button>
-  <p id="lastPressTime">Last pressed: Never</p>
+  <header>
+    <h1>Welcome to Overcomer</h1>
+  </header>
 
-  <h2>Want to go on?</h2>
-  <button id="goOnButton">Yes</button>
+  <main>
+    <h1>Press the Button!</h1>
+    <button id="pressButton">Press Me</button>
+    <p id="lastPressTime">Last pressed: Never</p>
 
-  <div id="videoContainer">
-    <video width="560" height="315" controls>
-      <source src="video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+    <h2>Want to go on?</h2>
+    <button id="goOnButton">Yes</button>
+  </main>
 
+  <!-- Modal Popup -->
   <div id="popupModal" class="modal">
-  <div class="modal-content">
-    <p>You will be okay!</p>
-    <button id="closeModalButton">Close</button>
+    <div class="modal-content">
+      <p>You will be okay!</p>
+      <video id="popupVideo" width="560" height="315" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button id="closeModalButton">Close</button>
+    </div>
   </div>
-</div>
 
+  <footer>
+    <p>&copy; 2025 Overcomer Project</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
