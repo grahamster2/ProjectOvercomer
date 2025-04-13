@@ -1,3 +1,11 @@
+// Array of video file paths
+const videoLibrary = [
+  "videos/video1.mp4",
+  "videos/video2.mp4",
+  "videos/video3.mp4",
+  "videos/video4.mp4" // Add more videos as needed
+];
+
 // Array of Bible verses for sequential display
 const bibleVerses = [
   "1 Corinthians 10:13 - 'No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear. But when you are tempted, he will also provide a way out so that you can endure it.'",
@@ -11,6 +19,12 @@ const bibleVerses = [
 ];
 
 let currentVerseIndex = 0; // Track the current verse for the Bible verses feature
+
+// Function to select a random video from the library
+function getRandomVideo() {
+  const randomIndex = Math.floor(Math.random() * videoLibrary.length);
+  return videoLibrary[randomIndex];
+}
 
 // Function to display the current Bible verse in the modal
 function displayCurrentVerse() {
@@ -40,16 +54,19 @@ function openVerseModal() {
   displayCurrentVerse(); // Show the first verse
 }
 
-// Function to open the modal and play a video
+// Function to open the modal and play a randomly selected video
 function openVideoModal() {
   const modal = document.getElementById("popupModal");
   const modalContent = document.getElementById("modalContent");
+
+  // Select a random video from the library
+  const randomVideo = getRandomVideo();
 
   // Inject video content into the modal
   modalContent.innerHTML = `
     <p>You will be okay! I know you can stay strong. Just pray and ask God to help you. Take a few deep breaths and pray it out twin. Much love.</p>
     <video id="popupVideo" width="560" height="315" controls>
-      <source id="videoSource" src="videos/sample-video.mp4" type="video/mp4">
+      <source id="videoSource" src="${randomVideo}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <button id="closeModalButton">Close</button>
@@ -70,4 +87,4 @@ function closeModal() {
 
 // Attach event listeners to the buttons
 document.getElementById("pressButton").addEventListener("click", openVerseModal); // "Did you goon?" -> Bible verses
-document.getElementById("goOnButton").addEventListener("click", openVideoModal); // "Are you feeling urges to goon?" -> Video
+document.getElementById("goOnButton").addEventListener("click", openVideoModal); // "Are you feeling urges to goon?" -> Random video
