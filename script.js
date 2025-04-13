@@ -1,14 +1,15 @@
 // Define the library of video file paths
 const videoLibrary = [
   "videos/video1.mp4",
-  "videos/video2.mp4"
-   // Add more video files as needed
+  "videos/video2.mp4",
+  "videos/video3.mp4",
+  "videos/video4.mp4" // Add more video files as needed
 ];
 
 // Utility function: Select a random video from the library
 function getRandomVideo() {
-  const randomIndex = Math.floor(Math.random() * videoLibrary.length);
-  return videoLibrary[randomIndex];
+  const randomIndex = Math.floor(Math.random() * videoLibrary.length); // Generate random index
+  return videoLibrary[randomIndex]; // Return the video at the random index
 }
 
 // Function to update the "Last pressed" time
@@ -32,9 +33,14 @@ function handleGoOnButtonClick() {
   const videoElement = document.getElementById("popupVideo");
   const sourceElement = document.getElementById("videoSource");
 
-  sourceElement.src = randomVideo; // Set random video source
+  sourceElement.src = randomVideo + "?nocache=" + new Date().getTime(); // Add cache-busting query string
   videoElement.load(); // Reload video element
   videoElement.play(); // Start playing the video
+
+  // Error handling for video loading
+  videoElement.onerror = function () {
+    console.error("Error loading video:", randomVideo);
+  };
 
   // Display the modal
   document.getElementById("popupModal").style.display = "flex";
