@@ -2,8 +2,8 @@
 body {
   font-family: 'Helvetica', sans-serif;
   font-weight: bold;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Remove default browser margins */
+  padding: 0; /* Remove default browser paddings */
   background-color: #E0E0CE; /* Light Beige */
   color: #000000; /* Black */
   text-align: center;
@@ -20,6 +20,7 @@ header {
   background-color: #474747; /* Dark Gray */
   color: #F2AF29; /* Mustard Yellow */
   padding: 15px;
+  margin: 0; /* Remove default margins */
   width: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
   display: flex;
@@ -30,8 +31,8 @@ header {
 
 header img {
   display: block;
-  margin-bottom: 5px;
-  max-width: 120px; /* Reduced size for sleeker look */
+  margin-bottom: 10px;
+  max-width: 120px; /* Adjust logo size */
   transition: transform 0.3s ease; /* Hover effect */
 }
 
